@@ -1,12 +1,5 @@
 # Portfolio
 
-[Portfolio - Callum Grayson](https://callumgrayson.github.io)
+[Portfolio - Callum Grayson](https://callumgrayson.com)
 
-This is the repo for a simple portfolio of some of the projects I have worked on.
-
-
-
-
-
-
-
+This is the repo to display some of the projects I have created.
