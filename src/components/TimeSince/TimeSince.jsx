@@ -139,7 +139,8 @@ const StopwatchDisplay = () => {
   return (
     <>
       <h3>Time Since</h3>
-      <div>Time</div>
+      <p>Time for {person}</p>
+      <p>{Boolean(dateFrom) ? dateFrom.toLocaleString() : ""}</p>
       <div>
         <button
           type="button"
@@ -167,8 +168,6 @@ const StopwatchDisplay = () => {
         </button>
       </div>
       <div>
-        <div>Time for {person}</div>
-        {/* <div>Time Unix {Boolean(dateFrom) ? dateFrom.format() : ""}</div> */}
         <br />
 
         <div>

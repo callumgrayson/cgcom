@@ -29,7 +29,7 @@ function Logos() {
       <h3>Logos</h3>
       <div className="logos-box">
         {logosList.map((item, idx) => (
-          <div className="logo-row">
+          <div className="logo-row" key={item.title}>
             <h4>{idx + 1}</h4>
             <div className="logo-box">
               <img src={item.src} alt={`Logo - ${item.title}`} />
