@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  border: 1px solid blue;
+  height: 100vh;
+  max-height: 100vh;
+}
