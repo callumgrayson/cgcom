@@ -1,0 +1,31 @@
+.fib-grid-cell {
+  --cell-dimension: 1.8vmin;
+  box-sizing: border-box;
+  border: 1px solid lightgray;
+  margin: -0.5px;
+  background-color: black;
+  min-width: var(--cell-dimension);
+  min-height: var(--cell-dimension);
+  max-width: 5vmin;
+  max-height: 5vmin;
+  font-size: 1vmin;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.fib-grid-cell:hover {
+  cursor: pointer;
+}
+
+.fib-grid-color-default {
+  background-color: inherit;
+}
+.fib-grid-color-fibClearing {
+  background-color: green;
+}
+.fib-grid-color-incrementing {
+  background-color: yellow;
+}

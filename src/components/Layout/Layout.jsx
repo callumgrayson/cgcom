@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import MenuButton from "../Buttons/MenuButton";
 import LogoButton from "../Buttons/LogoButton";
 import useMenuState from "./useMenuState";

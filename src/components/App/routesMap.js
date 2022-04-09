@@ -7,6 +7,9 @@ const TaxCalculator = React.lazy(() =>
 const Anagrams = React.lazy(() => import("../Anagrams/Anagrams"));
 const Make24 = React.lazy(() => import("../Make24/Make24"));
 const Logos = React.lazy(() => import("../Logos/Logos"));
+const FibGrid = React.lazy(() => import("../FibGrid/FibGrid/FibGrid"));
+const Versaries = React.lazy(() => import("../Versaries/Versaries"));
+const TimeSince = React.lazy(() => import("../TimeSince/TimeSince"));
 
 const routesMap = [
   {
@@ -38,6 +41,21 @@ const routesMap = [
     path: "logos",
     element: Logos,
     title: "Logos",
+  },
+  {
+    path: "fib-grid",
+    element: FibGrid,
+    title: "FibGrid",
+  },
+  {
+    path: "versaries",
+    element: Versaries,
+    title: "Versaries",
+  },
+  {
+    path: "time-since",
+    element: TimeSince,
+    title: "Time Since",
   },
 ];
 
