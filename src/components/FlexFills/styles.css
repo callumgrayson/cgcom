@@ -1,24 +1,30 @@
 .quarter-split {
-  border: 1px solid purple;
-  height: calc(100% - 21px - 4px);
+  height: calc(100% - 21px - 4px - 1rem);
   display: flex;
-  /* justify-content: space-evenly;
-    align-items: space-evenly; */
+  justify-content: space-between;
+  align-items: space-between;
   flex-wrap: wrap;
   position: relative;
 }
 
+.quarter-box {
+  width: 46%;
+  height: 46%;
+  display: flex;
+  flex-direction: column;
+}
+.quarter-box p {
+  margin: 0;
+  padding: 0.3rem;
+  text-transform: capitalize;
+}
+
 .quarter-one {
-  box-sizing: border-box;
-  border: 1px solid goldenrod;
-  /* background-color: aqua; */
-  width: 50%;
-  height: 50%;
+  border: 1px solid lightgray;
   display: flex;
   flex-wrap: wrap;
-  /* align-items: flex-start; */
-  /* justify-content: flex-start; */
   align-content: flex-start;
+  flex: 1;
 }
 
 .vertical {
@@ -34,18 +40,17 @@
 }
 
 .box {
-  border: 1px solid blue;
-  box-sizing: border-box;
+  border: 1px solid white;
+  background-color: rgb(85, 26, 139);
+  color: white;
   width: 25%;
   height: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0.3rem;
 }
 
 .rerun {
-  /* position: absolute; */
-  left: 50px;
-  top: 0;
-  /* transform: translateY(calc(-100% - 1px)); */
+  margin-bottom: 1rem;
 }

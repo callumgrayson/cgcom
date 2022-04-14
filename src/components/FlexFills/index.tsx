@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
 
-// type Props = {}
-
 function FlexFills() {
   const [boxes, setBoxes] = useState<number[]>([]);
 
@@ -15,10 +13,10 @@ function FlexFills() {
 
     let t: any;
 
-    if (boxes.length < 13) {
+    if (boxes.length < 14) {
       t = setTimeout(() => {
         setBoxes(nextBoxes);
-      }, 400);
+      }, 200);
     }
 
     return () => clearTimeout(t);
@@ -30,34 +28,20 @@ function FlexFills() {
         Rerun
       </button>
       <div className="quarter-split">
-        <div className="quarter-one">
-          {boxes.map((box, idx) => (
-            <div key={box} className="box">
-              {box}
+        {["normal", "vertical", "reverse-row", "reverse-column"].map(
+          (direction) => (
+            <div className="quarter-box">
+              <p>{direction}</p>
+              <div className={`quarter-one ${direction}`}>
+                {boxes.map((box, idx) => (
+                  <div key={box} className="box">
+                    <div className="box-square">{box + 1}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-        <div className="quarter-one vertical">
-          {boxes.map((box, idx) => (
-            <div key={box} className="box">
-              {box}
-            </div>
-          ))}
-        </div>
-        <div className="quarter-one reverse-row">
-          {boxes.map((box, idx) => (
-            <div key={box} className="box">
-              {box}
-            </div>
-          ))}
-        </div>
-        <div className="quarter-one reverse-column">
-          {boxes.map((box, idx) => (
-            <div key={box} className="box">
-              {box}
-            </div>
-          ))}
-        </div>
+          )
+        )}
       </div>
     </>
   );
