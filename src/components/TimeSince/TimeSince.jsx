@@ -1,35 +1,24 @@
 import { useRef, useState, useEffect } from "react";
 import moment from "moment-timezone";
-
-const numberStyle = {
-  textAlign: "right",
-  width: "200px",
-  fontFamily: "courier",
-};
+import "./TimeSince.css";
 
 const zBirthDateTime = "2021-02-12T05:47+01:00";
 const cBirthDateTime = "1981-08-09T04:00+12:00";
 const lBirthDateTime = "1987-03-11T05:00+01:00";
 
-// const birthMap = {
-//   z: zBirthDateTime,
-//   c: cBirthDateTime,
-//   l: lBirthDateTime,
-// };
-
 const birthMomentMap = {
-  z: moment(zBirthDateTime),
   c: moment(cBirthDateTime),
   l: moment(lBirthDateTime),
+  z: moment(zBirthDateTime),
 };
 
 const personMap = {
-  z: "Z",
   c: "C",
   l: "L",
+  z: "Z",
 };
 
-const delay = 100;
+const delay = 166;
 
 const stopwatchCallback = ({ now, dateFrom }) => {
   const nowMoment = moment(now);
@@ -93,8 +82,8 @@ const stopwatchCallback = ({ now, dateFrom }) => {
 };
 
 const StopwatchDisplay = () => {
-  const [person, setPerson] = useState("");
-  const [dateFrom, setDateFrom] = useState(null);
+  const [person, setPerson] = useState(personMap["z"]);
+  const [dateFrom, setDateFrom] = useState(birthMomentMap["z"]);
 
   // const timeDisplay = useRef(null)
   const siRef = useRef(null); // Holds setInterval ref
@@ -137,35 +126,26 @@ const StopwatchDisplay = () => {
   // console.log("render", dateFrom)
 
   return (
-    <>
+    <div className="time-since">
       <h3>Time Since</h3>
-      <p>Time for {person}</p>
-      <p>{Boolean(dateFrom) ? dateFrom.toLocaleString() : ""}</p>
+      <div className="time-since-details">
+        <p>Time for {person}</p>
+        <p>{Boolean(dateFrom) ? dateFrom.toLocaleString() : " "}</p>
+      </div>
       <div>
-        <button
-          type="button"
-          onClick={() => {
-            handleDateChange("l");
-          }}
-        >
-          L
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            handleDateChange("z");
-          }}
-        >
-          Z
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            handleDateChange("c");
-          }}
-        >
-          C
-        </button>
+        {Object.keys(personMap).map((personKey) => (
+          <button
+            type="button"
+            onClick={() => {
+              handleDateChange(personKey);
+            }}
+            className={`time-since-person-button ${
+              person === personMap[personKey] ? "show" : ""
+            }`}
+          >
+            {personMap[personKey]}
+          </button>
+        ))}
       </div>
       <div>
         <br />
@@ -174,47 +154,68 @@ const StopwatchDisplay = () => {
           <div ref={splitRef}></div>
           <br />
           <div>
-            <table>
+            <table className="time-since-table">
               <tbody>
                 <tr>
                   <td>
-                    <div ref={yearsRef} style={numberStyle}></div>
+                    <p className="time-since-styles">
+                      <span ref={yearsRef}></span>
+                      <span className="hidden"></span>
+                    </p>
                   </td>
                   <td>Years</td>
                 </tr>
                 <tr>
                   <td>
-                    <div ref={monthsRef} style={numberStyle}></div>
+                    <p className="time-since-styles">
+                      <span ref={monthsRef}></span>
+                      <span className="hidden">a</span>
+                    </p>
                   </td>
                   <td>Months</td>
                 </tr>
                 <tr>
                   <td>
-                    <div ref={weeksRef} style={numberStyle}></div>
+                    <p className="time-since-styles">
+                      <span ref={weeksRef}></span>
+                      <span className="hidden">aa</span>
+                    </p>
                   </td>
                   <td>Weeks</td>
                 </tr>
                 <tr>
                   <td>
-                    <div ref={daysRef} style={numberStyle}></div>
+                    <p className="time-since-styles">
+                      <span ref={daysRef}></span>
+                      <span className="hidden">aaa</span>
+                    </p>
                   </td>
                   <td>Days</td>
                 </tr>
                 <tr>
                   <td>
-                    <div ref={hoursRef} style={numberStyle}></div>
+                    <p className="time-since-styles">
+                      <span ref={hoursRef}></span>
+                      <span className="hidden">aaaa</span>
+                    </p>
                   </td>
                   <td>Hours</td>
                 </tr>
                 <tr>
                   <td>
-                    <div ref={minutesRef} style={numberStyle}></div>
+                    <p className="time-since-styles">
+                      <span ref={minutesRef}></span>
+                      <span className="hidden">aaaaaa</span>
+                    </p>
                   </td>
                   <td>Minutes</td>
                 </tr>
                 <tr>
                   <td>
-                    <div ref={secondsRef} style={numberStyle}></div>
+                    <p className="time-since-styles">
+                      <span ref={secondsRef}></span>
+                      <span className="hidden">aaaaaaaaa</span>
+                    </p>
                   </td>
                   <td>Seconds</td>
                 </tr>
@@ -223,7 +224,7 @@ const StopwatchDisplay = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

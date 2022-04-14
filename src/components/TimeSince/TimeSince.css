@@ -1,0 +1,31 @@
+.time-since-details {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.time-since-table {
+  padding: 0 1rem;
+  font-family: monospace;
+  font-size: 1rem;
+}
+.time-since-table td {
+  padding: 0.1rem 0.3rem;
+}
+
+.time-since-styles {
+  text-align: right;
+  /* width: 200px; */
+  margin: 0;
+}
+
+.time-since-styles .hidden {
+  visibility: hidden;
+}
+
+.time-since-person-button {
+  margin: 0 0.5rem;
+}
+.time-since-person-button.show {
+  text-decoration: underline;
+  background-color: white;
+}
