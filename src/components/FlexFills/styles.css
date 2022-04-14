@@ -1,8 +1,14 @@
+.flex-fills {
+  height: 100%;
+}
+.flex-fills button {
+  padding: 0.5rem;
+}
+
 .quarter-split {
   height: calc(100% - 21px - 4px - 1rem);
   display: flex;
   justify-content: space-between;
-  align-items: space-between;
   flex-wrap: wrap;
   position: relative;
 }
@@ -12,31 +18,12 @@
   height: 46%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .quarter-box p {
   margin: 0;
   padding: 0.3rem;
   text-transform: capitalize;
-}
-
-.quarter-one {
-  border: 1px solid lightgray;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  flex: 1;
-}
-
-.vertical {
-  flex-direction: column;
-}
-
-.reverse-row {
-  flex-direction: row-reverse;
-}
-
-.reverse-column {
-  flex-direction: column-reverse;
 }
 
 .box {
@@ -53,4 +40,53 @@
 
 .rerun {
   margin-bottom: 1rem;
+  margin-right: 1rem;
 }
+
+.flex-fills-show-button.show {
+  background-color: white;
+  text-decoration: underline;
+}
+
+/* ##0 */
+.flex-row {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border: 1px solid lightgray;
+}
+/* ##0 */
+
+/* ##1 */
+.flex-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border: 1px solid lightgray;
+}
+/* ##1 */
+
+/* ##2 */
+.flex-row-reverse {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border: 1px solid lightgray;
+}
+/* ##2 */
+
+/* ##3 */
+.flex-column-reverse {
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border: 1px solid lightgray;
+}
+/* ##3 */

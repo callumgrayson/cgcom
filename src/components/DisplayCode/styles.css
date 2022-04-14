@@ -1,0 +1,32 @@
+.display-code-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  height: 88vh;
+}
+
+.display-code-container h4 {
+  margin-bottom: 0.2rem;
+}
+
+/* ##1 */
+.pre-container {
+  border: 10px solid green;
+  overflow-wrap: break-word;
+  width: 100%;
+}
+
+.pre-text {
+  border: 5px solid purple;
+  white-space: pre-wrap;
+}
+/* ##1 */
+.pre-text {
+  margin: 0;
+}
+.display-text-pre-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  padding-bottom: 1rem;
+}

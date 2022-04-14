@@ -1,6 +1,7 @@
 import * as React from "react";
 const ConvertTemp = React.lazy(() => import("../ConvertTemp"));
 const FlexFills = React.lazy(() => import("../FlexFills"));
+const DisplayCode = React.lazy(() => import("../DisplayCode"));
 const TaxCalculator = React.lazy(() =>
   import("../TaxCalculator/TaxCalculator")
 );
@@ -30,6 +31,11 @@ const routesMap = [
     path: "dice-sum",
     element: DiceSum,
     title: "Dice Sum",
+  },
+  {
+    path: "display-code",
+    element: DisplayCode,
+    title: "Display Code",
   },
   {
     path: "fib-grid",

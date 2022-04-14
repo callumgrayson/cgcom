@@ -3,10 +3,10 @@
   --outlet-box-padding: 1rem;
   --header-logo-dimension: 2rem;
   --header-svg-dimension: 1.33rem;
+  /* border: 1px solid red; */
 }
 
 header {
-  /* border: 1px solid red; */
   padding: 30px var(--outlet-box-padding);
   display: flex;
   justify-content: space-between;
@@ -54,7 +54,6 @@ header {
 }
 
 footer {
-  /* border: 1px solid red; */
   padding: 20px;
   margin-bottom: 56px;
 }
@@ -62,17 +61,14 @@ footer {
 .full-page {
   min-height: 100vh;
   max-height: 100vh;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
 }
 
 .flex-row-box {
-  /* border: 1px solid red; */
   display: flex;
   flex: 1;
-  /* height: 100%; */
   position: relative;
   overflow-y: hidden;
 }
@@ -88,7 +84,6 @@ footer {
 .click-box.open {
   visibility: visible;
   background-color: rgba(255, 255, 255, 0.5);
-  /* border: 1px solid red; */
 }
 
 .nav-box {
@@ -96,11 +91,9 @@ footer {
   position: absolute;
   top: 0;
   right: 0;
-  /* background-color: white; */
   background-color: var(--surround-color);
 
   visibility: hidden;
-  /* border: 1px solid red; */
 }
 
 .nav-box.open {
@@ -118,7 +111,6 @@ footer {
 }
 
 .nav-box nav {
-  /* border: 1px solid red; */
   width: max-content;
 }
 
@@ -131,7 +123,6 @@ footer {
 }
 
 .outlet-box {
-  /* border: 1px solid red; */
   width: 100%;
   max-height: 100%;
   order: 2;
