@@ -15,6 +15,9 @@ const DiceSum = React.lazy(() => import("../Dice/DiceSum"));
 const SavingsProjector = React.lazy(() =>
   import("../SavingsProjector/SavingsProjector")
 );
+const Stringification = React.lazy(() =>
+  import("../Stringification/Stringification")
+);
 
 const routesMap = [
   {
@@ -77,6 +80,11 @@ const routesMap = [
     path: "versaries",
     element: Versaries,
     title: "Versaries",
+  },
+  {
+    path: "stringification",
+    element: Stringification,
+    title: "Stringification",
   },
 ];
 
