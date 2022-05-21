@@ -1,0 +1,31 @@
+.equality_mode label {
+  margin-right: 1rem;
+}
+.equality_mode select {
+  padding: 6px;
+}
+.equality_mode option {
+  padding: 6px;
+}
+
+.equality_table {
+  border: 1px solid red;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.equality_table td,
+.equality_table th {
+  border: 1px solid lightgray;
+}
+
+.equality_table .cell {
+  min-width: 40px;
+}
+.equality_table .cell.true {
+  background-color: green;
+}
+.equality_table .cell.false {
+  background-color: rgb(255, 125, 125);
+}

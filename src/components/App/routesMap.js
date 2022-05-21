@@ -18,6 +18,7 @@ const SavingsProjector = React.lazy(() =>
 const Stringification = React.lazy(() =>
   import("../Stringification/Stringification")
 );
+const Equality = React.lazy(() => import("../Equality/Equality"));
 
 const routesMap = [
   {
@@ -85,6 +86,11 @@ const routesMap = [
     path: "stringification",
     element: Stringification,
     title: "Stringification",
+  },
+  {
+    path: "equality",
+    element: Equality,
+    title: "Equality",
   },
 ];
 
