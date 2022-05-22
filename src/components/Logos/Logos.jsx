@@ -1,5 +1,6 @@
 import React from "react";
 import CG1 from "./images/CG1-64.png";
+import CG1Purple from "./images/CG1-64-purple.png";
 import CG1Inv from "./images/CG1-Inv-64.png";
 import CG2 from "./images/CG2-64.png";
 import CG3 from "./images/CG3-64.png";
@@ -13,6 +14,7 @@ import "./Logos.css";
 
 const logosList = [
   { src: CG1, title: "CG1" },
+  { src: CG1Purple, title: "CG1Purple" },
   { src: CG1Inv, title: "CG1Inv" },
   { src: CG2, title: "CG2" },
   { src: CG7, title: "CG7" },
@@ -30,7 +32,7 @@ function Logos() {
       <div className="logos-box">
         {logosList.map((item, idx) => (
           <div className="logo-row" key={item.title}>
-            <h4>{idx + 1}</h4>
+            <h4 className="logo-row-number">{idx + 1}</h4>
             <div className="logo-box">
               <img src={item.src} alt={`Logo - ${item.title}`} />
             </div>

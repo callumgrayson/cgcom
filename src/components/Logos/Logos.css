@@ -8,6 +8,11 @@
   max-width: 1000px;
 }
 
+.logo-row-number {
+  min-width: 20px;
+  align-self: center;
+}
+
 .logo-box {
   display: flex;
   justify-content: center;
