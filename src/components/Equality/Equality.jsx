@@ -43,26 +43,28 @@ function Equality() {
           ))}
         </select>
       </div>
-      <table className="equality_table">
-        <tbody>
-          <tr>
-            <th></th>
+      <div className="equality_table_box">
+        <table className="equality_table">
+          <tbody>
+            <tr>
+              <th className="left"></th>
+              {displayMatrix &&
+                displayMatrix.map((row) => <th>{row[0].row.asWritten}</th>)}
+            </tr>
             {displayMatrix &&
-              displayMatrix.map((row) => <th>{row[0].row.asWritten}</th>)}
-          </tr>
-          {displayMatrix &&
-            displayMatrix.map((row) => (
-              <tr>
-                <th>{row[0].row.asWritten}</th>
-                {row.map((cell) => (
-                  <td
-                    className={`cell ${cell.areEqual ? "true" : "false"}`}
-                  ></td>
-                ))}
-              </tr>
-            ))}
-        </tbody>
-      </table>
+              displayMatrix.map((row) => (
+                <tr>
+                  <th className="left">{row[0].row.asWritten}</th>
+                  {row.map((cell) => (
+                    <td
+                      className={`cell ${cell.areEqual ? "true" : "false"}`}
+                    ></td>
+                  ))}
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
       {/* <pre>{JSON.stringify(displayMatrix, null, 2)}</pre> */}
 
       <h3>Key Points</h3>

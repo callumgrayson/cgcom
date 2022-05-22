@@ -1,3 +1,9 @@
+.equality_table_box {
+  width: 100%;
+  overflow: auto;
+  max-height: 80vh;
+}
+
 .equality_mode label {
   margin-right: 1rem;
 }
@@ -9,7 +15,7 @@
 }
 
 .equality_table {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   border-collapse: collapse;
   width: 100%;
   margin: 1rem 0;
@@ -18,6 +24,12 @@
 .equality_table td,
 .equality_table th {
   border: 1px solid lightgray;
+}
+
+.equality_table .left {
+  position: sticky;
+  left: -2px;
+  background-color: white;
 }
 
 .equality_table .cell {

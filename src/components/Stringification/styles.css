@@ -1,18 +1,37 @@
+.stringification_table_box {
+  height: 80vh;
+  width: 100%;
+  overflow: auto;
+  border: 1px solid lightgray;
+}
+
 .stringification_table {
-  /* border: 1px solid green; */
+  width: 100%;
   border-collapse: collapse;
+  overflow: auto;
+  /* margin-left: -16px; */
+}
+
+.stringification_table th.left {
+  z-index: 2;
+}
+.stringification_table .left {
+  position: sticky;
+  left: -2px;
+  background-color: var(--surround-color);
 }
 .stringification_table th {
   padding: 6px 6px;
   text-align: start;
   position: sticky;
-  top: -16px;
+  top: -2px;
   background-color: var(--surround-color);
+  z-index: 1;
 }
 
 .stringification_table td {
   padding: 6px 6px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
 }
 
 .stringification p {
