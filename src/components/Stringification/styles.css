@@ -1,13 +1,16 @@
 .stringification {
   isolation: isolate;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .stringification_table_box {
-  height: 80%;
+  /* height: 80%; */
   width: 100%;
   overflow: auto;
   border: 1px solid lightgray;
+  flex: 1;
 }
 
 .stringification_table {
