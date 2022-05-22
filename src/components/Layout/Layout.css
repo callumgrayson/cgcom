@@ -69,8 +69,8 @@ footer {
 
 .flex-row-box {
   display: flex;
-  /* flex: 1; */
-  height: calc(100% - 60px);
+  flex: 1;
+  /* height: calc(100% - 60px); */
   position: relative;
   overflow-y: hidden;
 }

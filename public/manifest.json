@@ -1,6 +1,6 @@
 {
-  "short_name": "GitHub - CG",
-  "name": "GitHub - Callum Graysonx",
+  "short_name": "CG",
+  "name": "Callum Grayson",
   "icons": [
     {
       "src": "CG1-64.png",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#111111"
+  "theme_color": "#888888",
+  "background_color": "#888888"
 }
