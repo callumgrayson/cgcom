@@ -1,5 +1,10 @@
+.stringification {
+  isolation: isolate;
+  height: 100%;
+}
+
 .stringification_table_box {
-  height: 80vh;
+  height: 80%;
   width: 100%;
   overflow: auto;
   border: 1px solid lightgray;
@@ -17,14 +22,14 @@
 }
 .stringification_table .left {
   position: sticky;
-  left: -2px;
+  left: 0px;
   background-color: var(--surround-color);
 }
 .stringification_table th {
   padding: 6px 6px;
   text-align: start;
   position: sticky;
-  top: -2px;
+  top: 0px;
   background-color: var(--surround-color);
   z-index: 1;
 }

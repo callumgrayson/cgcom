@@ -1,3 +1,7 @@
+.equality {
+  isolation: isolate;
+}
+
 .equality_table_box {
   width: 100%;
   overflow: auto;
@@ -28,7 +32,7 @@
 
 .equality_table .left {
   position: sticky;
-  left: -2px;
+  left: 0px;
   background-color: white;
 }
 

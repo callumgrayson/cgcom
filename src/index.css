@@ -19,3 +19,8 @@ code {
 button {
   cursor: pointer;
 }
+
+html,
+body {
+  height: 100%;
+}
