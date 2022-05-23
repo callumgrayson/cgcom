@@ -4,7 +4,11 @@ import { ReactComponent as CloseIcon } from "../../svg/close-icon.svg";
 function MenuButton({ showMenu, handler }) {
   return (
     <div className="easy-click">
-      <button className="easy-click-button show-menu-button" onClick={handler}>
+      <button
+        className="easy-click-button show-menu-button"
+        onClick={handler}
+        aria-label="Menu Button"
+      >
         {showMenu ? <CloseIcon /> : <MenuIcon />}
       </button>
     </div>
