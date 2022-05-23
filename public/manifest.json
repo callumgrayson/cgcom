@@ -1,11 +1,25 @@
 {
   "short_name": "CG",
   "name": "Callum Grayson",
+  "id": "/",
   "icons": [
     {
-      "src": "CG1-96-white.png",
-      "sizes": "96x96 64x64 48x48 32x32 24x24 16x16",
-      "type": "image/png"
+      "src": "/CG1-512-white.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/CG1-192-white.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/CG1-192-trans.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "start_url": ".",
