@@ -17,9 +17,9 @@ function Nav({ showMenu, handler }) {
                 <Link to={route.path}>{route.title}</Link>
               </li>
             ))}
-            <li>
+            {/* <li>
               <Link to="/nothing-here">Nothing Here</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>
