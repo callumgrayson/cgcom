@@ -4,7 +4,7 @@ function LogoButton() {
   return (
     <div className="easy-click">
       <Link to="/" className="easy-click-button" aria-label="App logo button">
-        <img src="./CG1-192-trans.png" alt="C inside G logo." />
+        <img src="./CG1-trans-512.svg" alt="C inside G logo." />
       </Link>
     </div>
   );
