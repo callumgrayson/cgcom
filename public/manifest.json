@@ -4,14 +4,8 @@
   "id": "/",
   "icons": [
     {
-      "src": "/CG1-maskable-108-56.png",
-      "sizes": "108x108",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/CG1-trans-192.png",
-      "sizes": "192x192",
+      "src": "/CG1-maskable-512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
