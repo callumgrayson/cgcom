@@ -4,9 +4,9 @@
   "id": "/",
   "icons": [
     {
-      "src": "/CG1-trans-512.svg",
+      "src": "/CG1-maskable_icon_x512.png",
       "sizes": "512x512",
-      "type": "image/svg+xml"
+      "type": "image/png"
     }
   ],
   "start_url": ".",
