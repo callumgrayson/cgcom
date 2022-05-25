@@ -4,7 +4,7 @@
   "id": "/",
   "icons": [
     {
-      "src": "/CG1-maskable-512.png",
+      "src": "/CG1-maskable_icon_x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
