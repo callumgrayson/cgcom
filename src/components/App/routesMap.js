@@ -19,6 +19,7 @@ const Stringification = React.lazy(() =>
   import("../Stringification/Stringification")
 );
 const Equality = React.lazy(() => import("../Equality/Equality"));
+const TennisBig3 = React.lazy(() => import("../TennisBig3/TennisBig3"));
 
 const routesMap = [
   {
@@ -70,6 +71,11 @@ const routesMap = [
     path: "tax-calculator",
     element: TaxCalculator,
     title: "Tax Calculator",
+  },
+  {
+    path: "tennis-big-3",
+    element: TennisBig3,
+    title: "Tennis Big 3",
   },
   {
     path: "time-since",

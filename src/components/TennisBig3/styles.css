@@ -1,0 +1,13 @@
+.tennis_big_3.box {
+  padding-bottom: 3rem;
+}
+.tennis_big_3.chart_container {
+  width: 100%;
+  min-width: 300px;
+  min-height: 400px;
+  overflow: auto;
+}
+.tennis_big_3.line_container {
+  width: max(300px, min(90vw, 800px));
+  height: max(400px, min(70vh, 800px));
+}
