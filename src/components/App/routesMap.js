@@ -2,6 +2,7 @@ import * as React from "react";
 const ConvertTemp = React.lazy(() => import("../ConvertTemp"));
 const FlexFills = React.lazy(() => import("../FlexFills"));
 const DisplayCode = React.lazy(() => import("../DisplayCode"));
+const Algorithms = React.lazy(() => import("../Algorithms"));
 const TaxCalculator = React.lazy(() =>
   import("../TaxCalculator/TaxCalculator")
 );
@@ -22,6 +23,11 @@ const Equality = React.lazy(() => import("../Equality/Equality"));
 const TennisBig3 = React.lazy(() => import("../TennisBig3/TennisBig3"));
 
 const routesMap = [
+  {
+    path: "calculations-by-hand",
+    element: Algorithms,
+    title: "Calculations By Hand",
+  },
   {
     path: "anagrams",
     element: Anagrams,

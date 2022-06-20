@@ -1,0 +1,80 @@
+.algorithms_cell {
+  /* border: 1px solid red; */
+
+  --color_highlight_carry: rgb(255, 160, 160);
+  --color_highlight_result: rgb(170, 182, 255);
+  --standard_dimension_carry: 0.7rem;
+  --standard_dimension_result: 1rem;
+  --highlight_radius_carry: calc(var(--standard_dimension_carry) * 0.5);
+  --highlight_radius_result: calc(var(--standard_dimension_result) * 0.5);
+  --standard_cell_dimension: 1.5rem;
+  width: var(--standard_cell_dimension);
+  padding: 0 calc(var(--standard_cell_dimension) * 0.1);
+}
+
+/* CARRY STYLES */
+.algorithms_cell_carry {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.algorithms_carry {
+  box-sizing: border-box;
+  border-radius: var(--standard_dimension_carry);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--standard_dimension_carry);
+  width: var(--standard_dimension_carry);
+}
+.algorithms_carry.highlight {
+  background-color: var(--color_highlight_carry);
+  /* box-shadow: x-offset y-offset blur-radius spread-radius color; */
+  box-shadow: 0px 0px var(--highlight_radius_carry)
+    var(--highlight_radius_result) var(--color_highlight_carry);
+  color: black;
+}
+.algorithms_carry_digit {
+  height: var(--standard_dimension_carry);
+  font-size: calc(var(--standard_dimension_carry) * 1.25);
+  line-height: var(--standard_dimension_carry);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding-bottom: calc(var(--standard_dimension_carry) / 10);
+  padding-top: 0;
+}
+
+/* RESULT STYLES */
+.algorithms_cell_result {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.algorithms_result {
+  box-sizing: border-box;
+  border-radius: var(--standard_dimension_result);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--standard_dimension_result);
+  width: var(--standard_dimension_result);
+}
+.algorithms_result.highlight {
+  background-color: var(--color_highlight_result);
+  /* box-shadow: x-offset y-offset blur-radius spread-radius color; */
+  box-shadow: 0px 0px var(--highlight_radius_result)
+    var(--highlight_radius_result) var(--color_highlight_result);
+  color: black;
+}
+
+.algorithms_result_digit {
+  height: var(--standard_dimension_result);
+  font-size: calc(var(--standard_dimension_result) * 1.25);
+  line-height: var(--standard_dimension_result);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding-bottom: calc(var(--standard_dimension_result) / 10);
+  padding-top: 0;
+}

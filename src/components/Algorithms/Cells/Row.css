@@ -1,0 +1,21 @@
+.algorithms_row {
+  /* border: 1px solid rebeccapurple; */
+  display: flex;
+  /* justify-content: flex-start; */
+  position: relative;
+  padding: 0 4px;
+  margin: 4px 0;
+}
+
+.algorithms_row_highlight {
+  /* border: 3px solid royalblue; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--carry_font_size);
+  box-shadow: 0px 0px 5px 3px green;
+  background-color: green;
+  opacity: 0.45;
+  border-radius: 3px;
+}

@@ -1,0 +1,14 @@
+.algorithms_cells {
+  margin-top: 3rem;
+}
+.algorithms_cells_box {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem;
+  --carry_font_size: 0.8rem;
+  --carry_height: 0.5rem;
+  --result_font_size: 1.1rem;
+  --result_height: 0.8rem;
+}

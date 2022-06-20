@@ -1,0 +1,6 @@
+.option_highlight_button {
+  margin-right: 0.2rem;
+}
+.option_highlight_button.highlight {
+  background-color: aqua;
+}

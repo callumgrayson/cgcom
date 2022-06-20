@@ -1,0 +1,34 @@
+.progress_buttons_spacer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
+.progress_buttons_spacer .counter_value {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.progress_button {
+  padding: 0.6rem 1rem;
+  height: 3rem;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  border-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chevron_right.left {
+  transform: rotate(180deg) scale(200%);
+}
+.chevron_right.right {
+  transform: scale(200%);
+}

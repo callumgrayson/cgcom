@@ -1,0 +1,1 @@
+export { creatorMultiplication } from "./multiplication";

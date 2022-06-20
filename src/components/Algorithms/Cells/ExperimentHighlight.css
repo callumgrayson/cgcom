@@ -1,0 +1,42 @@
+.experimental_highlight_box {
+  height: 100px;
+  /* width: 100px; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid black;
+  padding-bottom: 6rem;
+  --color_highlight: rgb(170, 182, 255);
+  --cells_standard_dimension: 2rem;
+  --highlight_radius: 1rem;
+}
+
+.experiment_highlight {
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+  border-radius: var(--cells_standard_dimension);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--cells_standard_dimension);
+  width: var(--cells_standard_dimension);
+}
+.experiment_highlight.highlight {
+  /* border: 1px solid blue; */
+  background-color: var(--color_highlight);
+  /* box-shadow: x-offset y-offset blur-radius spread-radius color; */
+  box-shadow: 0px 0px var(--highlight_radius) var(--highlight_radius)
+    var(--color_highlight);
+  color: black;
+}
+.experiment_highlight .digit {
+  height: var(--cells_standard_dimension);
+  font-size: calc(var(--cells_standard_dimension) * 1.25);
+  line-height: var(--cells_standard_dimension);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding-bottom: calc(var(--cells_standard_dimension) / 10);
+  padding-top: 0;
+  /* background-color: aquamarine; */
+}

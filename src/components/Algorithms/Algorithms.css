@@ -1,0 +1,14 @@
+.algorithms {
+  height: 100%;
+  max-width: 800px;
+  /* width: 100%; */
+  /* display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  box-sizing: border-box; */
+}
+
+.algorithms_options {
+  /* border: 1px solid plum;
+  display: block; */
+}

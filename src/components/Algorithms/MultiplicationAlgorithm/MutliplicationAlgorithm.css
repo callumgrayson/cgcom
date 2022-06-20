@@ -1,0 +1,285 @@
+.multiplication_algorithm {
+  --cell_width: 1rem;
+  --row_height_min: 1.5rem;
+  --cell_border_width: 1px;
+  --underline_thickness: 3px;
+  --color_highlight_carry: rgb(177, 186, 207);
+  --color_highlight_result: rgb(180, 255, 170);
+  --color_highlight_problem: rgb(170, 182, 255);
+  --color_highlight_final: rgb(255, 143, 143);
+  --standard_dimension_carry: 0.7rem;
+  --standard_dimension_result: 1rem;
+  --highlight_radius_carry: calc(var(--standard_dimension_carry) * 0.5);
+  --highlight_radius_result: calc(var(--standard_dimension_result) * 0.5);
+  --standard_cell_dimension: 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* border: 3px solid red; */
+}
+.multiplication_algorithm .slider_box {
+  /* border: 10px solid transparent; */
+  padding: 1rem 0;
+}
+
+.multiplication_algorithm .info_box {
+  height: fit-content;
+  /* width: 100%; */
+  padding: 0 1rem;
+  /* border: 2px solid lightskyblue; */
+}
+
+.algorithm_positioner_box {
+  /* width: 100%; */
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.algorithm_problem_box {
+  padding-top: 1rem;
+  width: fit-content;
+}
+.algorithm_working_box {
+  min-height: 100px;
+  /* width: 100%; */
+  /* border: 1px solid goldenrod; */
+}
+.algorithm_working_box .working_box_area {
+  background-color: lightgray;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  min-height: 44px;
+}
+
+.toprow,
+.bottomrow {
+  min-height: var(--row_height_min);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.operation_sign_cell {
+  /* border: var(--cell_border_width) solid gray; */
+  min-height: 1rem;
+}
+
+.underline {
+  border-bottom: var(--underline_thickness) solid transparent;
+}
+.underline.show {
+  border-color: black;
+}
+
+.working_box {
+  flex: 1;
+  min-width: 100px;
+  /* border: 1px solid lightgray; */
+}
+
+.answer_row {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0.7rem 0;
+}
+
+.answer_row_box {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  min-height: var(--row_height_min);
+  width: 100%;
+}
+.answer_row_cells_box {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* 
+CELL Styles 
+*/
+.cell {
+  width: var(--standard_cell_dimension);
+  padding: 0 calc(var(--standard_cell_dimension) * 0.1);
+  /* background-color: transparent; */
+}
+
+/* PROBLEM CELLS */
+
+.problemrow_cell {
+  min-height: 1.2rem;
+}
+.problemrow_cell_box {
+  display: flex;
+  justify-content: flex-end;
+}
+.problemrow_box {
+  box-sizing: border-box;
+  border-radius: var(--standard_dimension_result);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--standard_dimension_result);
+  width: var(--standard_dimension_result);
+}
+.problemrow_box.highlight {
+  background-color: var(--color_highlight_problem);
+  /* box-shadow: x-offset y-offset blur-radius spread-radius color; */
+  box-shadow: 0px 0px var(--highlight_radius_result)
+    var(--highlight_radius_result) var(--color_highlight_problem);
+  color: black;
+}
+.problemrow_box_digit {
+  height: var(--standard_dimension_result);
+  font-size: calc(var(--standard_dimension_result) * 1.25);
+  line-height: var(--standard_dimension_result);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding-bottom: calc(var(--standard_dimension_result) / 10);
+  padding-top: 0;
+}
+
+.answer_cell {
+  min-height: 1.2rem;
+}
+
+/* CARRY CELLS */
+
+.answer_cell_carry {
+  display: flex;
+  justify-content: flex-start;
+}
+.answer_carry {
+  box-sizing: border-box;
+  border-radius: var(--standard_dimension_carry);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--standard_dimension_carry);
+  width: var(--standard_dimension_carry);
+}
+.answer_carry.highlight {
+  background-color: var(--color_highlight_carry);
+  /* box-shadow: x-offset y-offset blur-radius spread-radius color; */
+  box-shadow: 0px 0px var(--highlight_radius_carry)
+    var(--highlight_radius_result) var(--color_highlight_carry);
+  color: black;
+}
+.answer_carry_digit {
+  height: var(--standard_dimension_carry);
+  font-size: calc(var(--standard_dimension_carry) * 1.25);
+  line-height: var(--standard_dimension_carry);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding-bottom: calc(var(--standard_dimension_carry) / 10);
+  padding-top: 0;
+}
+
+/* RESULT CELLS */
+
+.answer_cell_result {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.answer_result {
+  box-sizing: border-box;
+  border-radius: var(--standard_dimension_result);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--standard_dimension_result);
+  width: var(--standard_dimension_result);
+}
+.answer_result.highlight {
+  background-color: var(--color_highlight_result);
+  /* box-shadow: x-offset y-offset blur-radius spread-radius color; */
+  box-shadow: 0px 0px var(--highlight_radius_result)
+    var(--highlight_radius_result) var(--color_highlight_result);
+  color: black;
+}
+
+.answer_result_digit {
+  height: var(--standard_dimension_result);
+  font-size: calc(var(--standard_dimension_result) * 1.25);
+  line-height: var(--standard_dimension_result);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding-bottom: calc(var(--standard_dimension_result) / 10);
+  padding-top: 0;
+}
+
+.answer_row_box .highlight_box.highlight {
+  min-height: 1rem;
+  height: calc(100% - 1rem);
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  box-shadow: 0px 0px 12px 8px var(--color_highlight_final);
+  border-radius: 1rem;
+  background-color: var(--color_highlight_final);
+  /* opacity: 0.3; */
+}
+
+/*
+.cell .highlight,
+.answer_row .highlight_box.highlight,
+.answer_cell_result.highlight {
+  box-shadow: 0px 0px 5px 2px red;
+}
+.answer_cell_carry .highlight,
+.working_cell.highlight {
+  box-shadow: 0px 0px 5px 2px blue;
+} */
+
+.options_button.selected {
+  background-color: aqua;
+}
+
+.reverse_row {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.algorithm_inputs_box {
+  padding: 0.5rem 0;
+  display: flex;
+}
+.algorithm_inputs_box .input_box {
+  margin: 0.2rem 0;
+}
+.algorithm_inputs_box input {
+  padding: 0.3rem 0.5rem;
+  width: 4rem;
+}
+.algorithm_inputs_box .sign_box {
+  margin: 0 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.create_steps_button_box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.create_steps_button {
+  padding: 0.5rem;
+}
+
+.progress_box {
+  /* width: 100%; */
+  /* padding: 0 1rem; */
+  /* border: 1px solid red; */
+  max-width: 800px;
+}
+.progress_buttons_box {
+  padding: 0 3px;
+}

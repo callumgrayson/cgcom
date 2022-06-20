@@ -1,0 +1,8 @@
+.progress_slider_box {
+  /* border: 5px solid orangered; */
+  display: flex;
+}
+
+.progress_slider_box #progress_slider {
+  flex: 1;
+}
