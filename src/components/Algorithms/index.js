@@ -12,20 +12,23 @@ const viewMap = {
   Cells: Cells,
 };
 
-function Options({ options, setter }) {
-  return (
-    <div className="algorithms_options">
-      {Object.keys(options).map((key, idx) => (
-        <button key={key} onClick={() => setter(key)}>
-          {key}
-        </button>
-      ))}
-    </div>
-  );
-}
+// function Options({ options, setter }) {
+//   return (
+//     <div className="algorithms_options">
+//       {Object.keys(options).map((key, idx) => (
+//         <button key={key} onClick={() => setter(key)}>
+//           {key}
+//         </button>
+//       ))}
+//     </div>
+//   );
+// }
 
 function Algorithms() {
-  const [algorithmType, setAlgorithmType] = useState("MultiplicationAlgorithm");
+  const [
+    algorithmType,
+    // setAlgorithmType
+  ] = useState("MultiplicationAlgorithm");
   const C = viewMap[algorithmType];
   return (
     <div className="algorithms">

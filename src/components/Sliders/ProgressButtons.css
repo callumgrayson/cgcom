@@ -17,13 +17,17 @@
 
 .progress_button {
   padding: 0.6rem 1rem;
-  height: 3rem;
-  aspect-ratio: 1;
-  border-radius: 100%;
-  border-color: transparent;
+  height: 4rem;
+  aspect-ratio: 2;
+  border-radius: 1rem;
+  border-color: rgb(118, 118, 118);
+  border-width: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.progress_button.invisible {
+  visibility: hidden;
 }
 
 .chevron_right.left {

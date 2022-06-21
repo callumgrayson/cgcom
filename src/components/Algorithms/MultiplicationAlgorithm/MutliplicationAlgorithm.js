@@ -28,6 +28,8 @@ function MutliplicationAlgorithm() {
   const metadata = record ? record.metadata : {};
   const problemSteps = record ? record.steps : {};
 
+  // Abstract handleCreate to useCreate
+
   function handleCreate() {
     try {
       const [n0, n1] = [Number(multiplicands[0]), Number(multiplicands[1])];
@@ -47,6 +49,8 @@ function MutliplicationAlgorithm() {
       setErrorDisplay(error.message);
     }
   }
+
+  // Abstract handleChangeMultiplicands to useProblem
 
   function handleChangeMultiplicands(e, inputIdx) {
     const [a, b] = multiplicands;
@@ -110,25 +114,22 @@ function MutliplicationAlgorithm() {
             </>
           ) : null}
         </h4>
+      </div>
 
-        <div className="progress_box">
-          <div className="progress_buttons_box">
-            <ProgressButtons
-              step={step}
-              max={problemSteps.length - 1}
-              handler={setStep}
-              counterValue={Number(step)}
-            />
-          </div>
-          <div className="slider_box">
-            <ProgressSlider
-              step={step}
-              handler={setStep}
-              from={sliderRange.from}
-              to={problemSteps.length - 1}
-            />
-          </div>
-        </div>
+      <div className="algorithm_working_box">
+        {Number(step) === 0 ||
+        Number(step) === problemSteps.length - 1 ? null : (
+          <>
+            <div className="working_box_area">
+              <h4>Working</h4>
+              <Working
+                rows={problemSteps[step].working}
+                operation={problemSteps[step].operation_sign}
+                highlight={problemSteps[step].highlight}
+              />
+            </div>
+          </>
+        )}
       </div>
 
       <div className="algorithm_positioner_box">
@@ -159,22 +160,24 @@ function MutliplicationAlgorithm() {
               highlightKey="s"
             />
           </div>
-
-          <div className="algorithm_working_box">
-            {Number(step) === 0 ||
-            Number(step) === problemSteps.length - 1 ? null : (
-              <>
-                <h4>Working</h4>
-                <div className="working_box_area">
-                  <Working
-                    rows={problemSteps[step].working}
-                    operation={problemSteps[step].operation_sign}
-                    highlight={problemSteps[step].highlight}
-                  />
-                </div>
-              </>
-            )}
-          </div>
+        </div>
+      </div>
+      <div className="progress_box">
+        <div className="progress_buttons_box">
+          <ProgressButtons
+            step={step}
+            max={problemSteps.length - 1}
+            handler={setStep}
+            counterValue={Number(step)}
+          />
+        </div>
+        <div className="slider_box">
+          <ProgressSlider
+            step={step}
+            handler={setStep}
+            from={sliderRange.from}
+            to={problemSteps.length - 1}
+          />
         </div>
       </div>
     </div>

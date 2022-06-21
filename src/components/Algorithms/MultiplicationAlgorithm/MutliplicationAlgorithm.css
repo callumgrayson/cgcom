@@ -16,6 +16,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-bottom: 2rem;
   /* border: 3px solid red; */
 }
 .multiplication_algorithm .slider_box {
@@ -35,6 +36,8 @@
   padding: 0 1rem;
   display: flex;
   justify-content: center;
+  min-height: 300px;
+  margin-bottom: 1rem;
 }
 
 .algorithm_problem_box {
@@ -42,15 +45,18 @@
   width: fit-content;
 }
 .algorithm_working_box {
-  min-height: 100px;
+  min-height: 120px;
   /* width: 100%; */
   /* border: 1px solid goldenrod; */
+}
+.algorithm_working_box h4 {
+  margin-top: 0;
 }
 .algorithm_working_box .working_box_area {
   background-color: lightgray;
   padding: 1rem;
   border-radius: 0.5rem;
-  min-height: 44px;
+  min-height: 120px;
 }
 
 .toprow,

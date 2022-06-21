@@ -8,6 +8,7 @@ function prepareValue(val) {
 }
 
 function compareDoubleEquals(a, b) {
+  // eslint-disable-next-line
   return a == b;
 }
 function compareTripleEquals(a, b) {

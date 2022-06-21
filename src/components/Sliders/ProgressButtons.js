@@ -4,9 +4,12 @@ import "./ProgressButtons.css";
 
 const directions = [-1, 1];
 
-function ProgressButton({ direction, handler }) {
+function ProgressButton({ direction, handler, hide }) {
   return (
-    <button className="progress_button" onClick={handler}>
+    <button
+      className={`progress_button ${hide ? "invisible" : ""}`}
+      onClick={handler}
+    >
       {direction > 0 ? (
         <ChevronRight className="chevron_right right" />
       ) : (
@@ -32,6 +35,10 @@ function ProgressButtons({ handler, step, max, counterValue }) {
             key={direction}
             direction={direction}
             handler={() => handleClick(direction)}
+            hide={
+              (direction < 0 && Number(step) === 0) ||
+              (direction > 0 && Number(step) === Number(max))
+            }
           />
         );
       })}
