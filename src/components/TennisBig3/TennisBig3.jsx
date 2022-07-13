@@ -18,6 +18,7 @@ const TennisBig3 = () => {
       data: arr[1],
     };
   });
+
   return (
     <div className="tennis_big_3 box">
       <h3>Tennis Big 3</h3>
