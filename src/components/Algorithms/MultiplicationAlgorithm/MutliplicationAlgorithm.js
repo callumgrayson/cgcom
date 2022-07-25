@@ -36,7 +36,6 @@ function MutliplicationAlgorithm() {
       if (n0 > 0 && n1 > 0) {
         const created = creatorMultiplication(n0, n1);
         if (created) {
-          // console.log("created", created);
           setRecord(created);
           setErrorDisplay(null);
           setStep(0);

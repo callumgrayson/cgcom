@@ -1,9 +1,38 @@
 * {
   box-sizing: border-box;
 }
-/* 
-#root,
-.App {
-  height: 100%;
-  max-height: 100%;
-} */
+
+.flex-row {
+  display: flex;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.justify-around {
+  justify-content: space-around;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flip-x {
+  transform: rotateX(180deg);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.width-100 {
+  width: 100%;
+}

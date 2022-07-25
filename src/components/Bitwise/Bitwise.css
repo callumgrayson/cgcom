@@ -1,0 +1,29 @@
+.bitwise {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.graph-bitwise {
+  border: 1px solid blue;
+  min-height: 36px;
+  max-height: 36px;
+}
+
+.min-width-fit {
+  min-width: fit-content;
+}
+
+.bitwise-graph-box {
+  width: auto;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.bitwise-columns-box {
+  gap: 20px;
+  padding: 20px;
+}
