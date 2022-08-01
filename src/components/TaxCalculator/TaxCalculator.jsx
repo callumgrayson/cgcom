@@ -38,7 +38,12 @@ function convertCurrency({ ratesObject, amount, fromCode, toCode }) {
   return amount * relativeExchange;
 }
 
-function calculateTax(income, brackets) {
+function calculateTax({
+  taxIncome,
+  taxBrackets: brackets,
+  taxRuling: ruling30,
+}) {
+  const income = ruling30 ? taxIncome * 0.7 : taxIncome;
   const tax = brackets.reduce((acc, cur, idx) => {
     if (income <= cur[0]) {
       // If it's less than the last bracket do nothing
@@ -90,19 +95,39 @@ const countriesMap = {
 function TaxCalculator() {
   const [country, setCountry] = useState("SG");
   const [income, setIncome] = useState(100000);
+  const [has30percentRuling, setHas30percentRuling] = useState(false);
   const [taxToPay, setTaxToPay] = useState(
-    calculateTax(income, countriesMap[country].brackets)
+    calculateTax({
+      taxIncome: income,
+      taxBrackets: countriesMap[country].brackets,
+      taxRuling: has30percentRuling,
+    })
   );
   const latestEuroRates = useGetExchangeRates();
 
+  function calculateTaxToPay(newValues) {
+    const calculationValues = {
+      taxIncome: income,
+      taxBrackets: countriesMap[country].brackets,
+      taxRuling: has30percentRuling,
+      ...newValues,
+    };
+    setTaxToPay(calculateTax(calculationValues));
+  }
   function handleIncomeChange(e) {
     const incomeValue = Number(e.target.value);
     setIncome(incomeValue);
-    setTaxToPay(calculateTax(incomeValue, countriesMap[country].brackets));
+    calculateTaxToPay({ taxIncome: incomeValue });
   }
   function handleCountryChange(e) {
-    setCountry(e.target.name);
-    setTaxToPay(calculateTax(income, countriesMap[e.target.name].brackets));
+    const newCountry = e.target.name;
+    setCountry(newCountry);
+    calculateTaxToPay({ taxBrackets: countriesMap[newCountry].brackets });
+  }
+  function handleRuling30Change(e) {
+    const newBool = !has30percentRuling;
+    setHas30percentRuling(newBool);
+    calculateTaxToPay({ taxRuling: newBool });
   }
 
   const inTheHand = income - taxToPay.tax;
@@ -123,13 +148,27 @@ function TaxCalculator() {
         </button>
       ))}
       <h4>Currency: {countriesMap[country].currency}</h4>
-      <input
-        type="number"
-        name="income"
-        id="income"
-        onChange={handleIncomeChange}
-        value={income}
-      />
+      <div className="flex-row ">
+        <input
+          type="number"
+          name="income"
+          id="income"
+          onChange={handleIncomeChange}
+          value={income}
+        />
+        {country === "NL" ? (
+          <label htmlFor="input-30-ruling" className="ruling-30-label">
+            <input
+              type="checkbox"
+              name="input-30-ruling"
+              id="input-30-ruling"
+              checked={has30percentRuling}
+              onChange={handleRuling30Change}
+            />
+            Apply 30% ruling
+          </label>
+        ) : null}
+      </div>
 
       <h4>Tax Brackets</h4>
 
