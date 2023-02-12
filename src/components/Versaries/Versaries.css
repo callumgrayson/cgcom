@@ -1,0 +1,23 @@
+.versaries-input {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.versaries-input label {
+    font-weight: bold;
+}
+
+.versaries-input input, 
+.versaries-input select {
+    font-size: 1rem;
+}
+
+.input-timezone {
+}
+
+.input-datetime {
+    
+
+}
