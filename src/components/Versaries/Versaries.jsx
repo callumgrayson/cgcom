@@ -1,6 +1,8 @@
 import { useState } from "react";
 import moment from "moment-timezone";
 import InputDateTime from "./InputDateTime";
+import InputTimezone from "./InputTimezone";
+import "./Versaries.css";
 
 const base10sMap = [
   { unit: "seconds", value: 10000 },
@@ -39,11 +41,14 @@ const base10sMap = [
   { unit: "months", value: 1000 },
 ];
 
-// const zoeBirthDateTime = "2021-02-12 05:47+01:00"
-const zoeBirthDateTime = "2021-02-12T05:47";
-// const zoeBirthObject = new Date(zoeBirthDateTime);
+const zoeBirthDateTime = "2021-02-12T05:47+01:00"; // ISOish string, no ss or Z
+const zoeBirthTimezone = 'Europe/Paris'
+const elliotBirthDateTime = "2023-02-03T01:48+13:00";
+const elliotBirthTimezone = 'Pacific/Auckland'
 const formatFull = "dddd, MMMM Do YYYY, h:mm:ss a";
 const formatShort = "YYYY MMM DD";
+
+const userTzGuess = moment.tz.guess();
 
 const getDisplayDates = (inDateString) => {
   const momentBirth = moment(inDateString);
@@ -65,32 +70,46 @@ const getDisplayDates = (inDateString) => {
   return sortedDates;
 };
 
-// const initialDate = new Date().toISOString().split(":").slice(0, 2).join(":")
-const initialDate = zoeBirthDateTime;
-// console.log("initialDate", initialDate)
+const initialDate = zoeBirthDateTime
+const initialTz = zoeBirthTimezone
 
 const DatesBaseTen = () => {
   const [dateTime, setDateTime] = useState(initialDate);
+  const [tz, setTz] = useState(initialTz)
 
   const handleDateTimeChange = (inVal) => {
     const val = inVal.target.value;
-    // console.log("val", val)
     setDateTime(val);
   };
-  const resetHandler = () => {
-    setDateTime(initialDate);
+  const handleTzChange = (e) => {
+    const { value } = e.target;
+    setTz(value)
+  };
+  const zHandler = () => {
+    setDateTime(zoeBirthDateTime);
+    setTz(zoeBirthTimezone)
+  };
+  const eHandler = () => {
+    setDateTime(elliotBirthDateTime);
+    setTz(elliotBirthTimezone)
   };
 
-  const displayDates = getDisplayDates(dateTime);
+  const dateTimeIso = moment.tz(dateTime, tz).toISOString()
+  const displayDates = getDisplayDates(dateTimeIso);
 
   return (
     <>
       <h3>Versaries</h3>
       <InputDateTime value={dateTime} changeHandler={handleDateTimeChange} />
-      <button type="button" onClick={resetHandler}>
-        Reset
+      <InputTimezone value={tz} handler={handleTzChange} />
+      <button type="button" onClick={zHandler}>
+        Z
+      </button>
+      <button type="button" onClick={eHandler}>
+        E
       </button>
       <br />
+      <p>Results displayed in "{userTzGuess}" time.</p>
       <div>
         <table>
           <thead>

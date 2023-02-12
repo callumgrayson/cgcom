@@ -5,17 +5,20 @@ import "./TimeSince.css";
 const zBirthDateTime = "2021-02-12T05:47+01:00";
 const cBirthDateTime = "1981-08-09T04:00+12:00";
 const lBirthDateTime = "1987-03-11T05:00+01:00";
+const eBirthDateTime = "2023-02-03T01:48+13:00";
 
 const birthMomentMap = {
   c: moment(cBirthDateTime),
   l: moment(lBirthDateTime),
   z: moment(zBirthDateTime),
+  e: moment(eBirthDateTime),
 };
 
 const personMap = {
   c: "C",
   l: "L",
   z: "Z",
+  e: "E",
 };
 
 const delay = 166;
@@ -135,6 +138,7 @@ const StopwatchDisplay = () => {
       <div>
         {Object.keys(personMap).map((personKey) => (
           <button
+            key={personKey}
             type="button"
             onClick={() => {
               handleDateChange(personKey);
