@@ -1,9 +1,7 @@
-import React from "react";
-
 const InputDateTime = ({ value, changeHandler }) => {
-  console.log("value", value);
+
   const safeValue = dateAsIsoWithoutZ(value);
-  console.log("safeValue", safeValue);
+
 
   return (
     <div className="versaries-input input-datetime">

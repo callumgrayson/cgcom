@@ -8,10 +8,11 @@ const lBirthDateTime = "1987-03-11T05:00+01:00";
 const eBirthDateTime = "2023-02-03T01:48+13:00";
 
 const birthMomentMap = {
-  c: moment(cBirthDateTime),
-  l: moment(lBirthDateTime),
-  z: moment(zBirthDateTime),
-  e: moment(eBirthDateTime),
+  c: () => moment(cBirthDateTime),
+  l: () => moment(lBirthDateTime),
+  z: () => moment(zBirthDateTime),
+  e: () => moment(eBirthDateTime),
+  now: () => moment(new Date().toISOString()),
 };
 
 const personMap = {
@@ -19,6 +20,7 @@ const personMap = {
   l: "L",
   z: "Z",
   e: "E",
+  now: "Now",
 };
 
 const delay = 166;
@@ -84,9 +86,11 @@ const stopwatchCallback = ({ now, dateFrom }) => {
   };
 };
 
+const initialPerson = "z";
+
 const StopwatchDisplay = () => {
-  const [person, setPerson] = useState(personMap["z"]);
-  const [dateFrom, setDateFrom] = useState(birthMomentMap["z"]);
+  const [person, setPerson] = useState(personMap[initialPerson]);
+  const [dateFrom, setDateFrom] = useState(birthMomentMap[initialPerson]());
 
   // const timeDisplay = useRef(null)
   const siRef = useRef(null); // Holds setInterval ref
@@ -101,7 +105,7 @@ const StopwatchDisplay = () => {
 
   const handleDateChange = (name) => {
     setPerson(personMap[name]);
-    setDateFrom(birthMomentMap[name]);
+    setDateFrom(birthMomentMap[name]());
   };
 
   useEffect(() => {
@@ -126,14 +130,13 @@ const StopwatchDisplay = () => {
     };
   }, [dateFrom]);
 
-  // console.log("render", dateFrom)
-
   return (
     <div className="time-since">
       <h3>Time Since</h3>
       <div className="time-since-details">
         <p>Time for {person}</p>
-        <p>{Boolean(dateFrom) ? dateFrom.toLocaleString() : " "}</p>
+        <p>Local: {Boolean(dateFrom) ? dateFrom.toLocaleString() : " "}</p>
+        <p>UTC: {Boolean(dateFrom) ? moment(dateFrom).utc().toString() : ""}</p>
       </div>
       <div>
         {Object.keys(personMap).map((personKey) => (
