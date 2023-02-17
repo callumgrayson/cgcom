@@ -22,6 +22,7 @@ const Stringification = React.lazy(() =>
 const Equality = React.lazy(() => import("../Equality/Equality"));
 const TennisBig3 = React.lazy(() => import("../TennisBig3/TennisBig3"));
 const Bitwise = React.lazy(() => import("../Bitwise/Bitwise"));
+const Dates = React.lazy(() => import("../Dates/Dates"));
 
 const routesMap = [
   {
@@ -109,6 +110,11 @@ const routesMap = [
     path: "equality",
     element: Equality,
     title: "Equality",
+  },
+  {
+    path: "dates",
+    element: Dates,
+    title: "Dates",
   },
 ];
 
