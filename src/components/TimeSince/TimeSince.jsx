@@ -107,6 +107,12 @@ const StopwatchDisplay = () => {
     setPerson(personMap[name]);
     setDateFrom(birthMomentMap[name]());
   };
+  const handleInputDateChange = (e) => {
+    const date = e.target.value;
+    const m = moment(date);
+    setDateFrom(m);
+    setPerson("You");
+  };
 
   useEffect(() => {
     if (!dateFrom) return;
@@ -155,6 +161,9 @@ const StopwatchDisplay = () => {
         ))}
       </div>
       <div>
+        <br />
+        <input type="datetime-local" onChange={handleInputDateChange} />
+        <br />
         <br />
 
         <div>

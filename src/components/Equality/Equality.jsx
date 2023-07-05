@@ -55,8 +55,9 @@ function Equality() {
               displayMatrix.map((row) => (
                 <tr>
                   <th className="left">{row[0].row.asWritten}</th>
-                  {row.map((cell) => (
+                  {row.map((cell, cellIndex) => (
                     <td
+                      key={cellIndex}
                       className={`cell ${cell.areEqual ? "true" : "false"}`}
                     ></td>
                   ))}

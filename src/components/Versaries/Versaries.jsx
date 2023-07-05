@@ -5,6 +5,8 @@ import InputTimezone from "./InputTimezone";
 import "./Versaries.css";
 
 const base10sMap = [
+  { unit: "seconds", value: Math.E },
+  { unit: "seconds", value: Math.PI },
   { unit: "seconds", value: 10000 },
   { unit: "seconds", value: 100000 },
   { unit: "seconds", value: 1000000 },
@@ -12,39 +14,51 @@ const base10sMap = [
   { unit: "seconds", value: 100000000 },
   { unit: "seconds", value: 1000000000 },
 
+  { unit: "minutes", value: Math.E },
+  { unit: "minutes", value: Math.PI },
   { unit: "minutes", value: 1000 },
   { unit: "minutes", value: 10000 },
   { unit: "minutes", value: 100000 },
   { unit: "minutes", value: 1000000 },
   { unit: "minutes", value: 10000000 },
 
+  { unit: "hours", value: Math.E },
+  { unit: "hours", value: Math.PI },
   { unit: "hours", value: 100 },
   { unit: "hours", value: 1000 },
   { unit: "hours", value: 10000 },
   { unit: "hours", value: 100000 },
   { unit: "hours", value: 1000000 },
 
+  { unit: "days", value: Math.E },
+  { unit: "days", value: Math.PI },
   { unit: "days", value: 1 },
   { unit: "days", value: 10 },
   { unit: "days", value: 100 },
   { unit: "days", value: 1000 },
   { unit: "days", value: 10000 },
 
+  { unit: "weeks", value: Math.E },
+  { unit: "weeks", value: Math.PI },
   { unit: "weeks", value: 1 },
   { unit: "weeks", value: 10 },
   { unit: "weeks", value: 100 },
   { unit: "weeks", value: 1000 },
 
-  { unit: "months", value: 1 },
+  { unit: "months", value: Math.E },
+  { unit: "months", value: Math.PI },
   { unit: "months", value: 10 },
   { unit: "months", value: 100 },
   { unit: "months", value: 1000 },
+
+  { unit: "years", value: Math.E },
+  { unit: "years", value: Math.PI },
 ];
 
 const zoeBirthDateTime = "2021-02-12T05:47+01:00"; // ISOish string, no ss or Z
-const zoeBirthTimezone = 'Europe/Paris'
+const zoeBirthTimezone = "Europe/Paris";
 const elliotBirthDateTime = "2023-02-03T01:48+13:00";
-const elliotBirthTimezone = 'Pacific/Auckland'
+const elliotBirthTimezone = "Pacific/Auckland";
 const formatFull = "dddd, MMMM Do YYYY, h:mm:ss a";
 const formatShort = "YYYY MMM DD";
 
@@ -70,12 +84,12 @@ const getDisplayDates = (inDateString) => {
   return sortedDates;
 };
 
-const initialDate = zoeBirthDateTime
-const initialTz = zoeBirthTimezone
+const initialDate = zoeBirthDateTime;
+const initialTz = zoeBirthTimezone;
 
 const DatesBaseTen = () => {
   const [dateTime, setDateTime] = useState(initialDate);
-  const [tz, setTz] = useState(initialTz)
+  const [tz, setTz] = useState(initialTz);
 
   const handleDateTimeChange = (inVal) => {
     const val = inVal.target.value;
@@ -83,18 +97,18 @@ const DatesBaseTen = () => {
   };
   const handleTzChange = (e) => {
     const { value } = e.target;
-    setTz(value)
+    setTz(value);
   };
   const zHandler = () => {
     setDateTime(zoeBirthDateTime);
-    setTz(zoeBirthTimezone)
+    setTz(zoeBirthTimezone);
   };
   const eHandler = () => {
     setDateTime(elliotBirthDateTime);
-    setTz(elliotBirthTimezone)
+    setTz(elliotBirthTimezone);
   };
 
-  const dateTimeIso = moment.tz(dateTime, tz).toISOString()
+  const dateTimeIso = moment.tz(dateTime, tz).toISOString();
   const displayDates = getDisplayDates(dateTimeIso);
 
   return (
