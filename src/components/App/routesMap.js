@@ -23,6 +23,7 @@ const Equality = React.lazy(() => import("../Equality/Equality"));
 const TennisBig3 = React.lazy(() => import("../TennisBig3/TennisBig3"));
 const Bitwise = React.lazy(() => import("../Bitwise/Bitwise"));
 const Dates = React.lazy(() => import("../Dates/Dates"));
+const Radices = React.lazy(() => import("../Radices/Radices"));
 
 const routesMap = [
   {
@@ -74,6 +75,11 @@ const routesMap = [
     path: "make24",
     element: Make24,
     title: "Make 24",
+  },
+  {
+    path: "radices",
+    element: Radices,
+    title: "Radices",
   },
   {
     path: "savings-projector",
