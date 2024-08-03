@@ -18,8 +18,8 @@ function Radices() {
     return out;
   })();
   return (
-    <div>
-      <h1>Radices</h1>
+    <div className="radices-container">
+      <h1 className="radices-title">Radices</h1>
       <table className="radices-table">
         <tbody>
           <tr key="" className="header-row">

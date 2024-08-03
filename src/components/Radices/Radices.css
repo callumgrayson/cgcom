@@ -3,27 +3,13 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-.header-row {
-    position: sticky;
-}
-
 .th-cell {
     position: sticky;
     top: 0;
     background-color: white;
 }
 
-.radices-row {
-    /* display: flex;
-    width: 100%; */
-    border: 1px solid red;
-}
-
 .radices-cell {
-    /* display: flex;
-    flex-basis: 1;
-    flex-grow: auto;
-    min-width: fit-content; */
     border: none;
     text-align: end;
 }
